@@ -8,9 +8,9 @@
 
 }
 
-/* body {
-    background-color: #c70000;
-} */
+body {
+    background-color: #F2F7FD;
+}
 
 
 .main {
@@ -155,10 +155,6 @@
     /* spacing from bottom if needed */
 }
 
-.cell-content h2 {
-    margin-top: 8%;
-}
-
 
 .cell-button {
     align-self: flex-end;
@@ -208,6 +204,48 @@
 
 }
 
+.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+
+}
+
+.grid-item.full-width {
+    grid-column: span 2;
+
+}
+
+.top {
+    background-color: #ffffff;
+    border-radius: 36px;
+    text-align: left;
+}
+
+.bottom {
+    background-color: #ffffff;
+    border-radius: 36px;
+    text-align: left;
+
+}
+
+
+
+.bottom .cell-content h2 {
+    margin-top: 8%;
+    margin-left: 8%;
+}
+
+.top .cell-content h2 {
+    margin-top: 8%;
+    margin-left: 4%;
+}
+
+/* .top .cell-bg-image {
+    background-color: #ffffff;
+} */
 
 /*==============================================================================================================
 ============================================Mobile Optimization=================================================
@@ -237,14 +275,7 @@
 
     }
 
-    .left h2 {
-        font-family: 'inter';
-        font-weight: 600;
-        font-size: 32px;
-        color: #4f4f4f;
-        margin-bottom: 24px;
 
-    }
 
     .left .welcome {
         margin-bottom: 8px;
@@ -269,45 +300,6 @@
     .right {
         width: 100%;
         /* background-color: #E84B58; */
-    }
-
-    .custom-table {
-
-        width: 100%;
-        height: 100%;
-        border-collapse: separate;
-        /* border-spacing: 0px 10px; */
-
-    }
-
-    .merged-cell {
-        background-color: #ffffff;
-        border-radius: 36px;
-
-        table-layout: fixed;
-        /* margin: 48px 1px; */
-        font-family: 'Inter';
-        font-weight: 600;
-        padding: 0;
-
-
-
-    }
-
-    .merged-cell.bottom {
-        width: 50%;
-        height: 50%;
-
-
-    }
-
-    .merged-cell.top {
-        height: 50%;
-    }
-
-    .merged-cell h2 {
-        text-align: left;
-        padding-left: 31px;
     }
 
 
@@ -349,8 +341,8 @@
         align-self: flex-end;
         margin-right: 10px;
         margin-bottom: 10px;
-        height: 100px;
-        width: 99px;
+        height: 80px;
+        width: 79px;
         z-index: 0;
 
         background-color: #EE757F;
@@ -392,6 +384,44 @@
         border: none;
 
     }
+
+    .custom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item.full-width {
+        grid-column: span 1;
+    }
+
+    .bottom .cell-content h2 {
+        margin-top: 4%;
+        margin-left: 4%;
+    }
+
+    .top .cell-content h2 {
+        margin-top: 4%;
+        margin-left: 4%;
+        z-index: 1;
+    }
+
+    .top .cell-bg-image {
+        height: 80%;
+        width: auto;
+        /* This keeps the aspect ratio */
+        object-fit: contain;
+        /* Optional: ensures full image is visible */
+        display: block;
+    }
+
+    .bottom .cell-bg-image {
+        height: 85%;
+        width: auto;
+        /* This keeps the aspect ratio */
+        object-fit: contain;
+        /* Optional: ensures full image is visible */
+        display: block;
+    }
+
 
 
 }

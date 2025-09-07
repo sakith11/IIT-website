@@ -208,6 +208,11 @@ export default function MapPage() {
     function handleDoubleClick(item) {
         navigate(`/building/${item.id}`);
     }
+    const handleMobileClick = (item) => {
+        if (window.innerWidth < 768) {
+            handleDoubleClick(item);
+        }
+    };
     useEffect(() => {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(
@@ -273,7 +278,7 @@ export default function MapPage() {
                                             marginTop: '8px',
                                             marginLeft: '10px'
                                         }}>
-                                            <img src="/images/image 35.png" alt={item.title} className="card-image" />
+                                            <img src="/images/image 35.png" alt={item.title} className="card-image" onClick={handleMobileClick} />
                                         </div>
                                         <div className="card-text">
                                             <h3>{item.title}</h3>
