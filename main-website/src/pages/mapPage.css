@@ -125,8 +125,6 @@
 
 card-image {
     background-color: #955959;
-
-
     width: 75px;
     height: 109px;
     object-fit: cover;
@@ -165,4 +163,126 @@ card-image {
     border-radius: 20px;
     font-weight: 500;
     white-space: nowrap;
+}
+
+/*==============================================================================================================
+============================================Mobile Optimization=================================================
+==============================================================================================================*/
+@media (max-width: 768px) {
+
+
+    .mobile-page-wrapper {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .mapMain {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        margin: 8px auto;
+        /* margin-top: 8px; */
+
+    }
+
+    .content-area {
+        /* display: block; */
+        outline: none;
+        margin-top: 0px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1px;
+        background-color: #ffffff;
+        z-index: 1000;
+
+    }
+
+    .card-scroll {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        overflow-y: auto;
+        max-height: calc(100% - 1px);
+    }
+
+    .info-card {
+        display: block;
+        align-items: center;
+
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); */
+        transition: transform 0.2s ease;
+        scroll-snap-align: start;
+        gap: 12px;
+        width: 99%;
+        /* border-bottom: 1px solid #757171; */
+        /* Thin black line */
+        /* border-radius: 10px 10px 0 0; */
+        box-shadow: none;
+        text-align: center;
+    }
+
+    .distance-tag {
+        position: sticky;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        z-index: 2;
+    }
+
+    .school-badges {
+        /* display: flex; */
+        position: sticky;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+        margin-left: 25%;
+    }
+
+    .school-badge {
+        position: sticky;
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        border-radius: 20px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .card-container {
+        background-color: rgb(255, 255, 255);
+        position: fixed;
+        /* Stick to screen position */
+        bottom: 0;
+        /* Align to bottom */
+        left: 0;
+        /* flex: 0 0 50%; */
+        height: 35%;
+        width: 100%;
+        /* Only take 25% of the width */
+        padding: 0;
+        /* height: 100%; */
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container {
+        flex: 0 0 50%;
+        height: 65vh;
+        max-height: 936px;
+        background-color: rgb(255, 255, 255);
+        flex: 1;
+        padding: 4px;
+        z-index: 2000;
+
+    }
 }
