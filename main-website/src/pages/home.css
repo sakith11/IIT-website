@@ -1,0 +1,397 @@
+.container {
+    max-width: 1280px;
+    max-height: 924px;
+    background-color: #F2F7FD;
+    display: block;
+    margin: 8px auto;
+    /* margin-top: 8px; */
+
+}
+
+/* body {
+    background-color: #c70000;
+} */
+
+
+.main {
+    display: flex;
+    margin-top: 122px;
+
+}
+
+.left {
+    width: 50%;
+    text-align: left;
+
+}
+
+.left h2 {
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 32px;
+    color: #4f4f4f;
+    margin-bottom: 24px;
+
+}
+
+.left .welcome {
+    margin-bottom: 8px;
+}
+
+.left h1 {
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 96px;
+    background: linear-gradient(135deg, #DD383F, #FF858B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+
+
+
+}
+
+.right {
+    width: 50%;
+    /* background-color: #E84B58; */
+}
+
+.welcome-button {
+
+    white-space: nowrap;
+    margin-top: 24px;
+    padding: 20px 40px;
+    font-family: 'inter';
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #E84B58, #FF9D92);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 248px;
+    max-height: 56px;
+
+}
+
+.welcome-button:hover {
+    transform: scale(1.15);
+
+}
+
+.custom-table {
+
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    /* border-spacing: 0px 10px; */
+
+}
+
+.merged-cell {
+    background-color: #ffffff;
+    border-radius: 36px;
+
+    table-layout: fixed;
+    /* margin: 48px 1px; */
+    font-family: 'Inter';
+    font-weight: 600;
+    padding: 0;
+
+
+
+}
+
+.merged-cell.bottom {
+    width: 50%;
+    height: 50%;
+
+
+}
+
+.merged-cell.top {
+    height: 50%;
+}
+
+.merged-cell h2 {
+    text-align: left;
+    padding-left: 31px;
+}
+
+
+
+.cell-bg-image {
+    position: absolute;
+    bottom: 0;
+    left: 18%;
+    /* width: 358px;
+    height: 216px; */
+    object-fit: contain;
+    z-index: 0;
+    margin-top: 45px;
+    pointer-events: none;
+
+}
+
+.cell-content {
+    /* padding-left: 30px; */
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* push content apart */
+    /* align-items: flex-start; */
+    height: 100%;
+    position: relative;
+    /* padding-bottom: 10px; */
+    overflow: hidden;
+    /* spacing from bottom if needed */
+}
+
+.cell-content h2 {
+    margin-top: 8%;
+}
+
+
+.cell-button {
+    align-self: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 99px;
+    z-index: 0;
+
+    background-color: #EE757F;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+}
+
+.cell-button i {
+    rotate: -45deg;
+    font-size: 28px;
+
+}
+
+.cell-button:hover {
+    background: linear-gradient(135deg, #c1272d, #ff4d4d);
+    transform: scale(1.05);
+    rotate: -15deg;
+}
+
+.spacer-row {
+    height: 5px;
+
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+
+}
+
+.cell-gap {
+    width: 20px;
+    background: none;
+    padding: 0;
+    border: none;
+
+}
+
+
+/*==============================================================================================================
+============================================Mobile Optimization=================================================
+==============================================================================================================*/
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 450px;
+        max-height: 932px;
+        background-color: #F2F7FD;
+        display: block;
+        /* margin: 8px auto; */
+        /* margin-top: 8px; */
+
+    }
+
+    .main {
+        display: block;
+        /* margin-top: 122px; */
+
+    }
+
+    .left {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 24px;
+
+    }
+
+    .left h2 {
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 32px;
+        color: #4f4f4f;
+        margin-bottom: 24px;
+
+    }
+
+    .left .welcome {
+        margin-bottom: 8px;
+    }
+
+    .left h1 {
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 74px;
+        background: linear-gradient(135deg, #DD383F, #FF858B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+
+
+
+    }
+
+    .right {
+        width: 100%;
+        /* background-color: #E84B58; */
+    }
+
+    .custom-table {
+
+        width: 100%;
+        height: 100%;
+        border-collapse: separate;
+        /* border-spacing: 0px 10px; */
+
+    }
+
+    .merged-cell {
+        background-color: #ffffff;
+        border-radius: 36px;
+
+        table-layout: fixed;
+        /* margin: 48px 1px; */
+        font-family: 'Inter';
+        font-weight: 600;
+        padding: 0;
+
+
+
+    }
+
+    .merged-cell.bottom {
+        width: 50%;
+        height: 50%;
+
+
+    }
+
+    .merged-cell.top {
+        height: 50%;
+    }
+
+    .merged-cell h2 {
+        text-align: left;
+        padding-left: 31px;
+    }
+
+
+
+    .cell-bg-image {
+        position: absolute;
+        bottom: 0;
+        left: 18%;
+        /* width: 358px;
+        height: 216px; */
+        object-fit: contain;
+        z-index: 0;
+        margin-top: 45px;
+        pointer-events: none;
+
+    }
+
+    .cell-content {
+        /* padding-left: 30px; */
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* push content apart */
+        /* align-items: flex-start; */
+        height: 100%;
+        position: relative;
+        /* padding-bottom: 10px; */
+        overflow: hidden;
+        /* spacing from bottom if needed */
+    }
+
+    .cell-content h2 {
+        margin-top: 8%;
+    }
+
+
+    .cell-button {
+        align-self: flex-end;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        height: 100px;
+        width: 99px;
+        z-index: 0;
+
+        background-color: #EE757F;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        transition: background 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .cell-button i {
+        rotate: -45deg;
+        font-size: 28px;
+
+    }
+
+    .cell-button:hover {
+        background: linear-gradient(135deg, #c1272d, #ff4d4d);
+        transform: scale(1.05);
+        rotate: -15deg;
+    }
+
+    .spacer-row {
+        height: 10px;
+
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+
+    }
+
+    .cell-gap {
+        width: 20px;
+        background: none;
+        padding: 0;
+        border: none;
+
+    }
+
+
+}

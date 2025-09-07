@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "title": "GP Square",
+        "image": "/images/image 41.png",
+        "gradient1": "#5481A1",
+        "gradient2": "#A1C1D3",
+        "description": "GP Square is the main academic building.",
+        "floors": [
+            {
+                "name": "Parking",
+                "image": "/images/image 49.png",
+                "gradient1": "#3079FF",
+                "gradient2": "#88AFF8",
+                "sections": [
+                    {
+                        "name": "Reception",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "This is one of three libraries IIT has."
+                    },
+                    {
+                        "name": "Cafeteria",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "Handles administration for all departments."
+                    }
+                ]
+            },
+            {
+                "name": "Level 01",
+                "image": "/images/image 51.png",
+                "gradient1": "#3079FF",
+                "gradient2": "#88AFF8",
+                "sections": [
+                    {
+                        "name": "Computer Lab",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "Equipped with over 100 high-performance systems for coding and development."
+                    },
+                    {
+                        "name": "Lecture Hall 201",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "Large lecture hall primarily used for computer science courses."
+                    }
+                ]
+            },
+            {
+                "name": "Level 03",
+                "image": "/images/image 52.png",
+                "gradient1": "#3079FF",
+                "gradient2": "#88AFF8",
+                "sections": [
+                    {
+                        "name": "Physics Lab",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "Advanced lab for practical experiments related to physics and electronics."
+                    },
+                    {
+                        "name": "Faculty Offices",
+                        "icon": "<i class='fa-solid fa-mug-hot'></i>",
+                        "description": "Contains offices of senior faculty and department heads."
+                    }
+                ]
+            }
+        ]
+    }
+]

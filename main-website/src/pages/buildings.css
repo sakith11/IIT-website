@@ -1,0 +1,198 @@
+.buildingMain {
+    max-width: 1280px;
+    max-height: 936px;
+    /* background-color: #000000; */
+    display: block;
+    margin: 8px auto;
+    /* margin-top: 8px; */
+
+}
+
+.building-content {
+    /* display: block; */
+    display: flex;
+    outline: none;
+    margin-top: 50px;
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+.building-image-container {
+    flex: 1;
+    width: 50%;
+    height: 100%;
+}
+
+.building-image-box {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.building-image {
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    /* or contain, based on your preference */
+    display: block;
+}
+
+.drop-down-container {
+    width: 50%;
+    height: 100%;
+}
+
+.floor-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    transform: translateX(-25%);
+    width: 25%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.floor-navigation button {
+    background: rgba(255, 255, 255);
+    border: 1px solid #CACACA;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 16px;
+
+}
+
+.floor-navigation button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.floor-label {
+
+    font-weight: bold;
+    width: 170px;
+    height: 46px;
+    padding-top: 16px;
+    padding-right: 40px;
+    padding-bottom: 16px;
+    padding-left: 40px;
+    border-radius: 100px;
+    border: 1px solid #CACACA;
+    color: #000000;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nested-dropdown {
+    margin-left: 10px;
+    /* or use padding-left: 10px; */
+}
+
+summary {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Firefox */
+summary {
+    list-style: none;
+}
+
+.dropdown-summary {
+    display: flex;
+    justify-content: space-between;
+    /* pushes arrow to end */
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 16px;
+    background: #ffffff;
+    border-radius: 6px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    border-left: none;
+    border-right: none;
+    transition: background 0.3s;
+    width: 100%;
+    height: 87px;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.dropdown-icon {
+    transition: transform 0.3s;
+}
+
+details[open] .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.section-summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px 12px;
+}
+
+.section-icon {
+    font-size: 14px;
+    color: #555;
+}
+
+.section-name {
+    font-weight: 500;
+
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    color: #1A1A1A;
+
+}
+
+.section-description {
+    padding-left: 38px;
+    margin-top: 8px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12px;
+    color: #959393;
+}
+
+.floor-description {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    color: #767676;
+}
