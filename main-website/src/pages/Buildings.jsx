@@ -9,6 +9,7 @@ export default function BuildingInfoPage() {
     const building = buildingData.find(b => b.id === id);
     const [hasExplored, setHasExplored] = useState(false);
     const [currentFloorIndex, setCurrentFloorIndex] = useState(null);
+    const [oldFloorIndex, setOldFloorIndex] = useState(null);
     const [activeGradient, setActiveGradient] = useState({
         gradient1: building.gradient1,
         gradient2: building.gradient2,
@@ -17,12 +18,14 @@ export default function BuildingInfoPage() {
     //     building.floors[0]?.image || building.image
     // );
     const [activeImage, setActiveImage] = useState(building.image);
+    const [oldImage, setOldImage] = useState(building.image);
 
     const handleFloorChange = (newIndex) => {
         if (newIndex < 0 || newIndex >= building.floors.length) return;
 
         const selectedFloor = building.floors[newIndex];
-
+        // setOldFloorIndex(oldIndex);
+        // setOldImage(oldFloorIndex.image)
         setCurrentFloorIndex(newIndex);
         setActiveImage(selectedFloor.image);
         setActiveGradient({
@@ -51,19 +54,20 @@ export default function BuildingInfoPage() {
                     >
                         <div className="building-image-box">
                             <img src={activeImage} alt={building.image} className="building-image" />
-                            <div className="floor-navigation">
-                                <button onClick={() => handleFloorChange(currentFloorIndex - 1)} disabled={currentFloorIndex === 0}>
-                                    <i class="fa-solid fa-angle-up"></i>
-                                </button>
-                                <span className="floor-label">
-                                    {hasExplored && currentFloorIndex !== null
-                                        ? `${building.floors[currentFloorIndex].name}`
-                                        : 'Explore!'}
-                                </span>
-                                <button onClick={() => handleFloorChange(currentFloorIndex + 1)} disabled={currentFloorIndex === building.floors.length - 1}>
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </button>
-                            </div>
+
+                        </div>
+                        <div className="floor-navigation">
+                            <button onClick={() => handleFloorChange(currentFloorIndex - 1)} disabled={currentFloorIndex === 0}>
+                                <i class="fa-solid fa-angle-up"></i>
+                            </button>
+                            <span className="floor-label">
+                                {hasExplored && currentFloorIndex !== null
+                                    ? `${building.floors[currentFloorIndex].name}`
+                                    : 'Explore!'}
+                            </span>
+                            <button onClick={() => handleFloorChange(currentFloorIndex + 1)} disabled={currentFloorIndex === building.floors.length - 1}>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
                         </div>
 
                     </div>
