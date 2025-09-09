@@ -245,7 +245,6 @@ export default function MapPage() {
                                 const distance = userLocation && getDistanceInKm(userLocation.lat, userLocation.lng, item.lat, item.lng);
                                 return (
 
-
                                     < div
                                         key={item.id}
                                         className="info-card"
@@ -305,6 +304,9 @@ export default function MapPage() {
                                             <button className="card-button">Details</button>
                                         </Link> */}
                                         </div>
+                                        <button className="card-button" onClick={() => handleDoubleClick(item)}>
+                                            <i className="fas fa-arrow-right"></i>
+                                        </button>
                                     </div>
                                 );
                             })}
