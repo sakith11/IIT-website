@@ -10,6 +10,7 @@ export default function BuildingInfoPage() {
     const [hasExplored, setHasExplored] = useState(false);
     const [currentFloorIndex, setCurrentFloorIndex] = useState(null);
     const [oldFloorIndex, setOldFloorIndex] = useState(null);
+    const [openFloorIndex, setOpenFloorIndex] = useState(null);
     const [activeGradient, setActiveGradient] = useState({
         gradient1: building.gradient1,
         gradient2: building.gradient2,
@@ -26,6 +27,7 @@ export default function BuildingInfoPage() {
         const selectedFloor = building.floors[newIndex];
         // setOldFloorIndex(oldIndex);
         // setOldImage(oldFloorIndex.image)
+
         setCurrentFloorIndex(newIndex);
         setActiveImage(selectedFloor.image);
         setActiveGradient({
@@ -58,25 +60,28 @@ export default function BuildingInfoPage() {
                         </div>
                         <div className="floor-navigation">
                             <div className="floor-controls">
-                                <button
-                                    onClick={() => handleFloorChange(currentFloorIndex - 1)}
-                                    disabled={currentFloorIndex === 0}
-                                >
-                                    <i className="fa-solid fa-angle-down"></i>
-                                </button>
+                                {(hasExplored && currentFloorIndex !== null) && (
+                                    <button
+                                        onClick={() => handleFloorChange(currentFloorIndex - 1)}
+                                        disabled={currentFloorIndex === 0}
+                                    >
+                                        <i className="fa-solid fa-angle-down"></i>
+                                    </button>
+                                )}
 
                                 <span className="floor-label">
                                     {hasExplored && currentFloorIndex !== null
                                         ? `${building.floors[currentFloorIndex].name}`
                                         : 'Explore!'}
                                 </span>
-
-                                <button
-                                    onClick={() => handleFloorChange(currentFloorIndex + 1)}
-                                    disabled={currentFloorIndex === building.floors.length - 1}
-                                >
-                                    <i className="fa-solid fa-angle-up"></i>
-                                </button>
+                                {(hasExplored && currentFloorIndex !== null) && (
+                                    <button
+                                        onClick={() => handleFloorChange(currentFloorIndex + 1)}
+                                        disabled={currentFloorIndex === building.floors.length - 1}
+                                    >
+                                        <i className="fa-solid fa-angle-up"></i>
+                                    </button>
+                                )}
                             </div>
                         </div>
 
@@ -97,23 +102,33 @@ export default function BuildingInfoPage() {
                             {/* Floors */}
                             {building.floors.map((floor, floorIndex) => {
                                 const sectionNames = floor.sections.map(section => section.name).join(', ');
+                                const isOpen = openFloorIndex === floorIndex;
 
                                 return (
                                     <details
                                         key={floorIndex}
                                         className="dropdown-section"
-                                        open={floorIndex === currentFloorIndex}
+                                        open={isOpen}
                                     >
                                         <summary
                                             className="dropdown-summary"
-                                            onClick={() => {
-                                                setCurrentFloorIndex(floorIndex);
-                                                setActiveImage(floor.image);
-                                                setActiveGradient({
-                                                    gradient1: floor.gradient1,
-                                                    gradient2: floor.gradient2,
-                                                });
-                                                setHasExplored(true);
+                                            onClick={(e) => {
+                                                e.preventDefault(); // prevent native toggle
+
+                                                if (isOpen) {
+                                                    // Close it
+                                                    setOpenFloorIndex(null);
+                                                } else {
+                                                    // Open it
+                                                    setOpenFloorIndex(floorIndex);
+                                                    setCurrentFloorIndex(floorIndex);
+                                                    setActiveImage(floor.image);
+                                                    setActiveGradient({
+                                                        gradient1: floor.gradient1,
+                                                        gradient2: floor.gradient2,
+                                                    });
+                                                    setHasExplored(true);
+                                                }
                                             }}
                                         >
                                             <span className="summary-content">
@@ -128,7 +143,7 @@ export default function BuildingInfoPage() {
                                             <details
                                                 key={sectionIndex}
                                                 className="nested-dropdown"
-                                                open={floorIndex === currentFloorIndex}
+                                                open={isOpen}
                                             >
                                                 <summary className="section-summary">
                                                     <span
@@ -140,10 +155,10 @@ export default function BuildingInfoPage() {
                                                 <p className="section-description">{section.description}</p>
                                             </details>
                                         ))}
-
                                     </details>
                                 );
                             })}
+
 
                         </div>
                     </div>

@@ -32,7 +32,7 @@ body {
 .left h2 {
     font-family: 'inter';
     font-weight: 600;
-    font-size: 32px;
+    font-size: 28px;
     color: #4f4f4f;
     margin-bottom: 24px;
 
@@ -45,7 +45,7 @@ body {
 .left h1 {
     font-family: 'Google Sans Code', monospace;
     font-weight: 500;
-    font-size: 94px;
+    font-size: 86px;
     /* background: linear-gradient(135deg, #DD383F, #FF858B); */
     background-color: #000000;
     -webkit-background-clip: text;
