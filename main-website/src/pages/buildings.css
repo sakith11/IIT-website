@@ -53,17 +53,20 @@
 .floor-navigation {
     position: absolute;
     bottom: 0;
-    left: 38%;
-    transform: translateX(-38%);
-    width: 25%;
-    /* background: rgba(0, 0, 0, 0.5); */
-    /* semi-transparent background */
+    width: 556px;
+    height: 46px;
     color: white;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: center;
     align-items: center;
     padding: 10px;
-    /* box-sizing: border-box; */
+}
+
+.floor-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
 }
 
 .floor-navigation button {
@@ -89,23 +92,26 @@
 .floor-label {
 
     font-weight: bold;
-    width: 170px;
-    height: 46px;
+    /* width: 139px; */
+    /* height: 46px; */
     padding-top: 16px;
     padding-right: 40px;
     padding-bottom: 16px;
     padding-left: 40px;
     border-radius: 100px;
-    border: 1px solid #CACACA;
-    color: #000000;
+
+    color: #ffffff;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 14px;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    display: flex;
+    background-color: #FF725E;
+    border-width: 1px;
+    border-color: #CACACA;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .nested-dropdown {

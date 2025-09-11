@@ -57,17 +57,27 @@ export default function BuildingInfoPage() {
 
                         </div>
                         <div className="floor-navigation">
-                            <button onClick={() => handleFloorChange(currentFloorIndex - 1)} disabled={currentFloorIndex === 0}>
-                                <i class="fa-solid fa-angle-up"></i>
-                            </button>
-                            <span className="floor-label">
-                                {hasExplored && currentFloorIndex !== null
-                                    ? `${building.floors[currentFloorIndex].name}`
-                                    : 'Explore!'}
-                            </span>
-                            <button onClick={() => handleFloorChange(currentFloorIndex + 1)} disabled={currentFloorIndex === building.floors.length - 1}>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </button>
+                            <div className="floor-controls">
+                                <button
+                                    onClick={() => handleFloorChange(currentFloorIndex - 1)}
+                                    disabled={currentFloorIndex === 0}
+                                >
+                                    <i className="fa-solid fa-angle-down"></i>
+                                </button>
+
+                                <span className="floor-label">
+                                    {hasExplored && currentFloorIndex !== null
+                                        ? `${building.floors[currentFloorIndex].name}`
+                                        : 'Explore!'}
+                                </span>
+
+                                <button
+                                    onClick={() => handleFloorChange(currentFloorIndex + 1)}
+                                    disabled={currentFloorIndex === building.floors.length - 1}
+                                >
+                                    <i className="fa-solid fa-angle-up"></i>
+                                </button>
+                            </div>
                         </div>
 
                     </div>

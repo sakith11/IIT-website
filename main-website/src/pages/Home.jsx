@@ -27,7 +27,7 @@ export default function Home() {
                         <h2 className='welcome'>Welcome to</h2>
                         <h1 class="multi-line-heading">
                             <span><span class="red-letter">I</span>nformatics</span>
-                            <span><span class="red-letter">I</span>nstitute of</span>
+                            <span class="red-letter">I</span>nstitute<span class="narrow-space"> </span>of
                             <span><span class="red-letter">T</span>echnology</span>
                         </h1>
                         <h2 >Discover where learning meets fun,friends, and endless possibilities. </h2>

@@ -6,7 +6,7 @@ import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Tooltip } from 'react-leaflet';
 
 export let isUserLocationAvailable = false;
 // Set default icon globally
@@ -62,40 +62,8 @@ const markerData = [
         highlighted: false,
         nearby: []
     },
-    {
-        id: 4,
-        title: 'IIT Kurunegala',
-        bgColor: '#30B3FF0D',
-        description: '435 Galle RD, Colombo 03, Sri Lanka',
-        schools: [
-            { name: "computing", background: '6cbae3', text: '166c9a' },
-            { name: "business", background: 'e38c9e', text: '911d35' }
-        ],
-        lat: 7.2511,
-        lng: 80.3464,
-        highlighted: false,
-        nearby: [
-            { name: "computing", background: '6cbae3', text: '166c9a' },
-            { name: "business", background: 'e38c9e', text: '911d35' }
-        ]
-    },
-    {
-        id: 5,
-        title: 'IIT Galle',
-        bgColor: '#FF30300D',
-        description: '435 Galle RD, Colombo 03, Sri Lanka',
-        schools: [
-            { name: "computing", background: '6cbae3', text: '166c9a' },
-            { name: "business", background: 'e38c9e', text: '911d35' }
-        ],
-        lat: 6.0535,
-        lng: 80.2210,
-        highlighted: false,
-        nearby: [
-            { name: "computing", background: '6cbae3', text: '166c9a' },
-            { name: "business", background: 'e38c9e', text: '911d35' }
-        ]
-    },
+
+
     {
         id: 6,
         title: 'IIT Ramakrishna',
@@ -335,13 +303,18 @@ export default function MapPage() {
                                     position={[marker.lat, marker.lng]}
                                     icon={marker.highlighted ? highlightIcon() : defaultIcon()}
                                 >
-                                    <Popup>{marker.title}</Popup>
+                                    <Tooltip direction='right' offset={[0, -30]} permanent className="custom-tooltip">
+                                        {marker.title}
+                                    </Tooltip>
                                 </Marker>
                             ))}
 
+
                             {selectedMarker?.nearby?.map((n) => (
                                 <Marker key={n.id} position={[n.lat, n.lng]} icon={nearbyIcon()}>
-                                    <Popup>{n.title}</Popup>
+                                    <Tooltip direction='right' offset={[0, -10]} permanent className="custom-tooltip-nearby">
+                                        {n.title}
+                                    </Tooltip>
                                 </Marker>
                             ))}
                         </MapContainer>
